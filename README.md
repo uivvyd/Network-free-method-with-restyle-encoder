@@ -18,10 +18,14 @@ python scripts/network_free_segmentation.py \
 --generator_path=[Path for a StyleGAN2 checkpoint] \
 --data_path=[Directory for testing data] \
 ```
-Можно изменять количество версий style-mixed изображений для кластеризаций (`--n_stylemixed`), количество кластеров для KMeans (`--n_clusters`) и количество запусков для получения итоговой маски (`--n_repeat_kmeans`).
+Можно изменять:
+- количество версий style-mixed изображений для кластеризаций: `--n_stylemixed`
+- количество кластеров для KMeans: `--n_clusters`
+- количество запусков для получения итоговой маски: `--n_repeat_kmeans`
+
 ### Примеры работы
 <p align="center">
-<img src="docs/Network_free_method_FFHQ" width="800px"/>
+<img src="docs/Network_free_method_FFHQ.png" width="800px"/>
 <img src="docs/Network_free_method_CelebAMask.png" width="800px"/>
 <br>
 Результат работы улучшенного Network-free метода, датасеты: FFHQ, CelebAMask-HQ
