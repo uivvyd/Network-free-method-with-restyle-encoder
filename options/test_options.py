@@ -40,7 +40,20 @@ class TestOptions:
                                  help='comma-separated list of which edit directions top perform.')
         self.parser.add_argument('--factor_ranges', type=str, default='5,5,5',
                                  help='comma-separated list of max ranges for each corresponding edit.')
-
+        
+        # arguments for segmentation
+        self.parser.add_argument('--restyle_psp_path', type=str,
+                                 help='Path to ReStyle pSp-encoder checkpoint')
+        self.parser.add_argument('--generator_path', type=str,
+                                 help='Path to StyleGAN2 checkpoint')
+        self.parser.add_argument('--image_size', type=int, default=1024,
+                                help='Size of input images. Only supported 256, 512, 1024.')
+        self.parser.add_argument('--n_stylemixed', type=int, default=50,
+                                 help='Number of style-mixed versions to generate.')
+        self.parser.add_argument('--n_clusters', type=int, default=3,
+                                 help='Number of clusters for KMeans')  
+        self.parser.add_argument('--n_repeat_kmeans', type=int, default=10,
+                                 help='Number of KMeans repeats.')
 
     def parse(self):
         opts = self.parser.parse_args()
